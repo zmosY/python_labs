@@ -2,7 +2,7 @@
 
 ### Задание 1 — Привет и возраст
 
-![Код и демонстрация работы](/misc/images/lab01/img01)
+![Код и демонстрация работы](https://github.com/zmosY/python_labs/blob/main/images/lab01/img01.png)
 
 ---
 
