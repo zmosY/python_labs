@@ -7,4 +7,4 @@ for i in fio:
     if i != ' ':
         anscnt += 1
 print(f'Инициалы: {ansfio}')
-print(f'Длина (символов): {anscnt}')
+print(f'Длина (символов): {anscnt + 2}')
