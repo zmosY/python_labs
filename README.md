@@ -70,7 +70,8 @@ print(f'Длина (символов): {anscnt + 2}')
 
 ### Задание 6*
 
-```n = int(input())
+```
+n = int(input())
 tcnt = 0
 fcnt = 0
 
@@ -90,7 +91,8 @@ print(tcnt, fcnt)
 
 ### Задание 7*
 
-```s = input()
+```
+s = input()
 
 find = 0
 sind = 0
