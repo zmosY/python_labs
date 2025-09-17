@@ -14,7 +14,8 @@ print(f'Привет, {name}! Через год тебе будет {age + 1}.')
 
 ### Задание 2 — Сумма и среднее
 
-```a = float(input("a: ").replace(',', '.'))
+```py
+a = float(input("a: ").replace(',', '.'))
 b = float(input("b: ").replace(',', '.'))
 print(f'sum={a + b}; avg={((a + b) / 2):.2f}')
 ```
@@ -25,7 +26,8 @@ print(f'sum={a + b}; avg={((a + b) / 2):.2f}')
 
 ### Задание 3 — Чек: скидка и НДС
 
-```price = float(input())
+```py
+price = float(input())
 discount = float(input())
 vat = float(input())
 base = price * (1 - discount/100)
@@ -43,7 +45,8 @@ print(f'Итого к оплате: {total:.2f} ₽')
 
 ### Задание 4 — Минуты → ЧЧ:ММ
 
-```m = int(input('Минуты: '))
+```py
+m = int(input('Минуты: '))
 print(f'{(m // 60) % 24}:{(m % 60):02d}')
 ```
 
@@ -53,7 +56,8 @@ print(f'{(m // 60) % 24}:{(m % 60):02d}')
 
 ### Задание 5 — Инициалы и длина строки
 
-```fio = input('ФИО: ')
+```py
+fio = input('ФИО: ')
 ansfio = ''
 anscnt = 0
 for i in fio:
@@ -71,7 +75,7 @@ print(f'Длина (символов): {anscnt + 2}')
 
 ### Задание 6*
 
-```
+```py
 n = int(input())
 tcnt = 0
 fcnt = 0
@@ -92,7 +96,7 @@ print(tcnt, fcnt)
 
 ### Задание 7*
 
-```
+```py
 s = input()
 
 find = 0
