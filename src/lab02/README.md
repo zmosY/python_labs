@@ -4,14 +4,7 @@
 
 ```py
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
-    minv = 10 ** 100
-    maxv = -10 ** 100
-    for num in nums:
-        if num < minv:
-            minv = num
-        if num > maxv:
-            maxv = num
-    return minv, maxv
+    return min(nums), max(nums)
 
 #test min_max
 print('1:',min_max([3, -1, 5, 5, 0]))
@@ -26,15 +19,7 @@ print('5:',min_max([1.5, 2, 2.0, -3.1]))
 
 ```py
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
-    ans = []
-    for i in range(len(nums)):
-        if nums[i] not in ans:
-            ans.append(nums[i])
-    for i in range(len(ans) - 1):
-        for j in range(len(ans) - 1 - i):
-            if ans[j] > ans[j + 1]:
-                ans[j], ans[j + 1] = ans[j + 1], ans[j]
-    return ans
+    return list(sorted((set(nums))))
 
 #test unique_sorted
 print('1:', unique_sorted([3, 1, 2, 1, 3]))
@@ -145,22 +130,22 @@ except Exception as e: print('4:',type(e).__name__)
 ```py
 def format_record(rec: tuple[str, str, float]) -> str:
     fio_parts = rec[0].split()
+    fam = fio_parts[0].capitalize()
     name_init = fio_parts[1][0].upper()
     otch_init = [p[0].upper() for p in fio_parts[2:]]
-    inits = f'{name_init}.'
-    for otch in otch_init:
-        inits += f'{otch}.'
-    return f"{fio_parts[0].capitalize()} {inits}, гр. {rec[1]}, GPA {rec[2]:.2f}"
+    initials = name_init + ''.join('.' + i for i in otch_init) + '.'
+    gpa_str = f"{rec[2]:.2f}"
+    return f"{fam} {initials}, гр. {rec[1]}, GPA {gpa_str}"
 
 #test format_record
 print('1:', format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 print('2:', format_record(("Петров Пётр", "IKBO-12", 5.0)))
 print('3:', format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
-print('4:', format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
+try: print('4:', format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
+except Exception as e: print('4:',type(e).__name__)
 ```
 
 ![Код и демонстрация работы](/images/lab02/img03.png)
-
 
 
 

@@ -1,13 +1,6 @@
 
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
-    minv = 10 ** 100
-    maxv = -10 ** 100
-    for num in nums:
-        if num < minv:
-            minv = num
-        if num > maxv:
-            maxv = num
-    return minv, maxv
+    return min(nums), max(nums)
 
 #test min_max
 # print('1:',min_max([3, -1, 5, 5, 0]))
@@ -19,15 +12,7 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
 
 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
-    ans = []
-    for i in range(len(nums)):
-        if nums[i] not in ans:
-            ans.append(nums[i])
-    for i in range(len(ans) - 1):
-        for j in range(len(ans) - 1 - i):
-            if ans[j] > ans[j + 1]:
-                ans[j], ans[j + 1] = ans[j + 1], ans[j]
-    return ans
+    return list(sorted((set(nums))))
 
 #test unique_sorted
 # print('1:', unique_sorted([3, 1, 2, 1, 3]))
