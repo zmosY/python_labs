@@ -37,10 +37,8 @@ def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
     return sorted(freq.items(), key=lambda kv: (-kv[1], kv[0]))
 
 #early tests
-# from other.utils import get_project_root
-# project_root = get_project_root()
-# txt = read_text(project_root/'data'/'input.txt')  # должен вернуть строку
+# txt = read_text(f"data/input.txt")  # должен вернуть строку
 # print(txt)
-# write_csv([("word","count"),("test",3)], project_root/'data'/'check.csv')
+# write_csv([("word","count"),("test",3)], f"data/check.csv")
 
 

@@ -32,11 +32,9 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
             w.writerow(r)
 
 #early tests
-from other.utils import get_project_root
-project_root = get_project_root()
-txt = read_text(project_root/'data'/'input.txt')  # должен вернуть строку
+txt = read_text(f"data/input.txt")  # должен вернуть строку
 print(txt)
-write_csv([("word","count"),("test",3)], project_root/'data'/'check.csv')
+write_csv([("word","count"),("test",3)], f"data/check.csv")
 ```
 **intput.txt**
 

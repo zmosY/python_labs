@@ -8,7 +8,6 @@ def text_rep(input, output,encoding = 'utf-8'):
     output: Относительный путь к выходному CSV-файлу, например "data/lab04/report.csv"
     """
 
-
     input_path =  input
     output_path =  output
 
