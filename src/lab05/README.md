@@ -77,4 +77,3 @@ csv_to_xlsx('data/lab05/samples/people.csv', 'data/lab05/out/people.xlsx')
 ![Код и демонстрация работы](/images/lab05/imgA_03.png)
 ![Код и демонстрация работы](/images/lab05/imgB_01.png)
 
-
