@@ -109,6 +109,8 @@ if args.command == "csv2xlsx":
     csv_to_xlsx(args.input,args.out)
 ```
 
+**(тут опечатка вместо csv2xslx, csv2json  но испралять её мне лень)**
 ![Код и демонстрация работы](/images/lab06/imgB_07.png)
 ![Код и демонстрация работы](/images/lab06/imgB_05.png)
 ![Код и демонстрация работы](/images/lab06/imgB_08.png)
+
