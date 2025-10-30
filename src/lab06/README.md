@@ -51,8 +51,8 @@ if args.command == "stats":
 ```
 
 ![Код и демонстрация работы](/images/lab06/imgA_01.png)
-![Код и демонстрация работы](/images/lab05/imgA_02.png)
-![Код и демонстрация работы](/images/lab05/imgA_03.png)
+![Код и демонстрация работы](/images/lab06/imgA_02.png)
+![Код и демонстрация работы](/images/lab06/imgA_03.png)
 
 ---
 
@@ -91,6 +91,7 @@ if args.command == "json2csv":
 ![Код и демонстрация работы](/images/lab06/imgB_02.png)
 ![Код и демонстрация работы](/images/lab06/imgB_03.png)
 
+---
 
 ```py
 if args.command == "csv2json":
@@ -101,7 +102,7 @@ if args.command == "csv2json":
 ![Код и демонстрация работы](/images/lab06/imgB_05.png)
 ![Код и демонстрация работы](/images/lab06/imgB_06.png)
 
-
+---
 
 ```py
 if args.command == "csv2xlsx":
