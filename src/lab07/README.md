@@ -6,17 +6,18 @@
 import pytest
 from src.lib.text import normalize, tokenize, count_freq, top_n
 
+
 @pytest.mark.parametrize(
     "text, casefold, yo2e, expected",
     [
-        ("ПрИвЕт\nМИр\t", True, True, "привет мир"),              # normalize with case folding
-        ("ёжик, Ёлка", True, True, "ежик, елка"),                 # yo2e replacement
-        ("Hello\r\nWorld", True, True, "hello world"),             # newlines and carriage return
-        ("  двойные   пробелы  ", True, True, "двойные пробелы"), # multiple spaces
-        ("Hello", False, True, "Hello"),                           # casefold disabled
-        ("ёжик", True, False, "ёжик"),                             # yo2e disabled
-        ("", True, True, ""),                                       # empty string
-        ("   \n\t\r   ", True, True, ""),                           # whitespace only
+        ("ПрИвЕт\nМИр\t", True, True, "привет мир"),
+        ("ёжик, Ёлка", True, True, "ежик, елка"),
+        ("Hello\r\nWorld", True, True, "hello world"),
+        ("  двойные   пробелы  ", True, True, "двойные пробелы"),
+        ("Hello", False, True, "Hello"),
+        ("ёжик", True, False, "ежик"),
+        ("", True, True, ""),
+        ("   \n\t\r   ", True, True, ""),
     ],
 )
 def test_normalize(text, casefold, yo2e, expected):
@@ -27,14 +28,14 @@ def test_normalize(text, casefold, yo2e, expected):
 @pytest.mark.parametrize(
     "text, expected",
     [
-        ("привет мир", ["привет", "мир"]),                         # basic tokenization
-        ("hello,world!!!", ["hello", "world"]),                    # punctuation removal
-        ("по-настоящему круто", ["по-настоящему", "круто"]),      # hyphenated words
-        ("2025 год", ["2025", "год"]),                             # numbers
-        ("emoji 😀 не слово", ["emoji", "не", "слово"]),           # emoji ignored
-        ("", []),                                                   # empty string
-        ("!!!???...", []),                                         # only punctuation
-        ("Hello-world, это test-123!", ["Hello-world", "это", "test-123"]),  # mixed
+        ("привет мир", ["привет", "мир"]),
+        ("hello,world!!!", ["hello", "world"]),
+        ("по-настоящему круто", ["по-настоящему", "круто"]),
+        ("2025 год", ["2025", "год"]),
+        ("emoji 😀 не слово", ["emoji", "не", "слово"]),
+        ("", []),
+        ("!!!???...", []),
+        ("Hello-world, это test-123!", ["Hello-world", "это", "test-123"]),
     ],
 )
 def test_tokenize(text, expected):
@@ -45,11 +46,11 @@ def test_tokenize(text, expected):
 @pytest.mark.parametrize(
     "tokens, expected",
     [
-        (["a", "b", "a", "c", "b", "a"], {"a": 3, "b": 2, "c": 1}),  # basic counting
-        (["bb", "aa", "bb", "aa", "cc"], {"bb": 2, "aa": 2, "cc": 1}),  # cyrillic
-        ([], {}),                                                       # empty list
-        (["hello"], {"hello": 1}),                                     # single element
-        (["x", "x", "x"], {"x": 3}),                                   # all same
+        (["a", "b", "a", "c", "b", "a"], {"a": 3, "b": 2, "c": 1}),
+        (["bb", "aa", "bb", "aa", "cc"], {"bb": 2, "aa": 2, "cc": 1}),
+        ([], {}),
+        (["hello"], {"hello": 1}),
+        (["x", "x", "x"], {"x": 3}),
     ],
 )
 def test_count_freq(tokens, expected):
@@ -60,12 +61,12 @@ def test_count_freq(tokens, expected):
 @pytest.mark.parametrize(
     "freq, n, expected",
     [
-        ({"a": 3, "b": 2, "c": 1}, 2, [("a", 3), ("b", 2)]),                              # with limit
-        ({"bb": 2, "aa": 2, "cc": 1}, None, [("aa", 2), ("bb", 2), ("cc", 1)]),          # without limit
-        ({"z": 2, "a": 2, "b": 2}, None, [("a", 2), ("b", 2), ("z", 2)]),                # alphabetical sorting
-        ({}, 5, []),                                                                      # empty dict
-        ({"a": 1, "b": 1}, 10, [("a", 1), ("b", 1)]),                                    # limit > size
-        ({"a": 5, "b": 3}, 0, []),                                                       # limit zero
+        ({"a": 3, "b": 2, "c": 1}, 2, [("a", 3), ("b", 2)]),
+        ({"bb": 2, "aa": 2, "cc": 1}, None, [("aa", 2), ("bb", 2), ("cc", 1)]),
+        ({"z": 2, "a": 2, "b": 2}, None, [("a", 2), ("b", 2), ("z", 2)]),
+        ({}, 5, []),
+        ({"a": 1, "b": 1}, 10, [("a", 1), ("b", 1)]),
+        ({"a": 5, "b": 3}, 0, []),
     ],
 )
 def test_top_n(freq, n, expected):
