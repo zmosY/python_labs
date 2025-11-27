@@ -1,6 +1,7 @@
 from datetime import datetime, date
 from dataclasses import dataclass
 
+
 @dataclass
 class Student:
     fio: str
@@ -38,10 +39,9 @@ class Student:
                    gpa=float(d["gpa"]))
 
     def __str__(self):
-        return f"Студент: {self.fio}, Группа: {self.group}, gpa: {self.gpa}"
+        return f"Студент: {self.fio}, День рождения: {self.birthdate}, Группа: {self.group}, gpa: {self.gpa}"
 
-
-#test Student
+# test Student
 # s1 = Student(fio="Иванов И.И.", birthdate="2000/05/12", group="CS-101", gpa=3.3)
 # print(s1)
 # print(f"Возраст: {s1.age()}")

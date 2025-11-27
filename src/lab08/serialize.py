@@ -1,5 +1,5 @@
 import json
-from models import Student
+from .models import Student
 
 
 def students_to_json(students, path):
@@ -7,13 +7,13 @@ def students_to_json(students, path):
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+
 def students_from_json(path):
     with open(path, 'r', encoding='utf-8') as f:
         data_list = json.load(f)
     return [Student.from_dict(d) for d in data_list]
 
-
-#test students_to_json & students_from_json
+# test students_to_json & students_from_json
 # students = [
 #     Student(fio="Додиков А.А.", birthdate="2003/05/10", group="ГР-1", gpa=1.0),
 #     Student(fio="Слабаков Б.Б.",   birthdate="2002/11/12", group="ГР-1", gpa=2.0),
