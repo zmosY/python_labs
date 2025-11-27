@@ -74,7 +74,7 @@ def test_top_n(freq, n, expected):
     assert result == expected
 ```
 
-![Код и демонстрация работы](images/lab07/imgA_01.png)
+![Код и демонстрация работы](/images/lab07/imgA_01.png)
 
 
 ---
@@ -147,6 +147,6 @@ def test_csv_to_json_nonexistent_input_raises(tmp_path: Path):
 
 ```
 
-![Код и демонстрация работы](images/lab07/imgB_01.png)
+![Код и демонстрация работы](/images/lab07/imgB_01.png)
 
 
