@@ -304,6 +304,5 @@ class SinglyLinkedList:
 ![бенчмарки](/images/lab10/imgC_01.png)
 
 ##### Вывод по [бенчмаркам](./benchmark.py)
-1. **Deque vs List:** Для очереди `deque` значительно быстрее, так как удаление первого элемента (`popleft`) выполняется за $O(1)$, в то время как у `list` это $O(n)$ (сдвиг всего массива).
-2. **Built-in vs Custom:** Встроенные типы (`list`, `deque`) работают в разы быстрее нашего `SinglyLinkedList`, так как они реализованы на C, а создание тысяч объектов `Node` в Python создает большую нагрузку на память и GC.
-
+1. SinglyLinkedList сильно проигрывает stcak и queue в добавлении в конец
+2. При добавлении в начало SinglyLinkedListбудет работать луше чем Python list, но хуже чем deque
