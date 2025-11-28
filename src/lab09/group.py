@@ -1,6 +1,5 @@
 import csv
 from pathlib import Path
-from typing import List
 from src.lab08.models import Student
 from src.lab08.serialize import students_from_json, students_to_json
 
@@ -18,7 +17,7 @@ class Group:
                 writer = csv.DictWriter(f, fieldnames=self.fieldnames)
                 writer.writeheader()
 
-    def _read_all(self) -> List[Student]:
+    def _read_all(self) -> list[Student]:
         self._ensure_storage_exists()
         students = []
         with open(self.path, "r", encoding="utf-8", newline="") as f:
@@ -27,7 +26,7 @@ class Group:
                 students.append(Student.from_dict(row))
         return students
 
-    def list(self) -> List[Student]:
+    def list(self) -> list[Student]:
         return self._read_all()
 
     def add(self, student: Student):
@@ -37,7 +36,7 @@ class Group:
             writer = csv.DictWriter(f, fieldnames=self.fieldnames)
             writer.writerow(student.to_dict())
 
-    def find(self, substr: str) -> List[Student]:
+    def find(self, substr: str) -> list[Student]:
         students = self._read_all()
         q = []
         for s in students:
